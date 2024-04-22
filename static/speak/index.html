@@ -11,6 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="../../src/stylesheets/fonts/font.css" />
 
     <script
       src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
@@ -44,8 +45,13 @@
 
     <!-- contents -->
     <div class="speak-body">
-      <div class="ebook-viewer"></div>
+      <div id="ebookViewer" class="ebook-viewer"></div>
     </div>
+
+    <!-- contents: mobile -->
+    <!-- <div class="speak-body">
+      <div id="ebookViewerMobile" class="ebook-viewer"></div>
+    </div> -->
 
     <!-- play bar -->
     <div>
@@ -58,5 +64,36 @@
         <div class="wrapper-anims"></div>
       </div>
     </div>
+
+    <script>
+      // 이북 뷰어 리사이즈 (PC)
+      function updateWindowHeight() {
+        let windowHeight = window.innerHeight
+        let eBookViewerScale = (windowHeight - 92) / 750
+        let eBookViewer = document.getElementById('ebookViewer')
+        eBookViewer.style.transform = `scale(${eBookViewerScale})`
+      }
+      updateWindowHeight()
+      window.addEventListener('resize', function () {
+        updateWindowHeight()
+      })
+
+      // 이북 뷰어 리사이즈 (모바일)
+      // function updateWindowWidth() {
+      //   // 도서 레벨 (K: 480, 그외 : 525)
+      //   let bookLevel = 'K'
+      //   let windowWidth = window.innerWidth
+      //   let eBookSizeW = bookLevel === 'K' ? 480 : 525
+      //   let eBookMobileViewerScale = windowWidth / eBookSizeW
+      //   let mobilePositionTopSubtractValue =
+      //     ((windowWidth / eBookSizeW) * 750) / 2
+      //   let eBookViewerMobile = document.getElementById('ebookViewerMobile')
+      //   eBookViewerMobile.style.transform = `scale(${eBookMobileViewerScale})`
+      //   eBookViewerMobile.style.top = `calc(50% - ${
+      //     mobilePositionTopSubtractValue + 4
+      //   }px)`
+      // }
+      // updateWindowWidth()
+    </script>
   </body>
 </html>

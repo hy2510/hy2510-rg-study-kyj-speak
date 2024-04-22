@@ -71,6 +71,23 @@ button {
   position: relative;
 }
 
+.speak-body::after {
+  content: '잠시만 기다려 주세요. \A Speak 엔진을 활성화하는 중입니다. \A (작업 완료까지 최대 1분 정도 소요됩니다.)';
+  white-space: pre;
+  text-align: center;
+  color: #fff;
+  font-size: 1.2em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
 .speak-body .ebook-viewer {
   position: absolute;
   display: flex;
@@ -223,7 +240,7 @@ button {
   width: 100px;
   height: 100px;
   position: absolute;
-  bottom: -20px;
+  bottom: -10px;
 }
 
 .run-correct-sign {

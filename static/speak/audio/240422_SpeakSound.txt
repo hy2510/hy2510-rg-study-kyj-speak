@@ -1,0 +1,5 @@
+
+const sndCorrect = "https://wcfresource.a1edu.com/newsystem/sound/dodoabc/sightword/effect/correct.mp3";
+const sndIncorrect = "https://wcfresource.a1edu.com/newsystem/sound/dodoabc/sightword/effect/incorrect.mp3";
+const sndExcellent = "https://wcfresource.a1edu.com/newsystem/sound/dodoabc/sightword2/effect/aud_pass.mp3";
+const sndGoodEffort = "https://wcfresource.a1edu.com/newsystem/sound/dodoabc/sightword2/effect/aud_fail.mp3";
